@@ -7,6 +7,10 @@ services:
     restart: unless-stopped
     ports:
       - 9999:9999
+    environment:
+      TZ: Asia/Kolkata
+      PUID: 0
+      PGID: 0
     volumes:
       - ./plex_update.sh:/app/plex_update.sh
       - ./config.yml:/app/config.yml
@@ -18,8 +22,8 @@ services:
     restart: unless-stopped
     environment:
       TZ: Asia/Kolkata
-      PUID: 1000
-      PGID: 1000
+      PUID: 0
+      PGID: 0
     volumes:
       - /mnt/zurg:/data:rshared # CHANGE /mnt/zurg WITH YOUR PREFERRED MOUNT PATH
       - /mnt/zurg-testing/rclone.conf:/config/rclone/rclone.conf
