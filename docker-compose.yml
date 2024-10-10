@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  media-organizer:
+    build: .
+    container_name: media-organizer
+    volumes:
+      - /mnt/zurg/movies:/mnt/zurg/movies
+      - /mnt/zurg/shows:/mnt/zurg/shows
+      - /mnt/xio/movies:/mnt/xio/movies
+      - /mnt/xio/shows:/mnt/xio/shows
+    restart: always
